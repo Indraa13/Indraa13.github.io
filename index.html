@@ -22,7 +22,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body onload="getIPAddress();">
 	<div class="wrapper">
 		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
@@ -30,6 +30,12 @@
           <span class="align-middle">Ndraaa</span>
         </a>
 
+		<!-- audio -->
+
+<audio autoplay>
+	<source src="audio/JKT.mp3" type="audio/mp3"/>
+</audio>
+		
 				<ul class="sidebar-nav">
 					<li class="sidebar-header">
 						Halaman
@@ -316,7 +322,7 @@
 														</div>
 													</div>
 												</div>
-												<h1 class="mt-1 mb-3" id="gfg">182.253.110.107</h1>
+												<p><h1><span id="ip-address"></span></h1></p>
 												<div class="mb-0">
 													<span class="text-muted">Your Ip Address</span>
 												</div>
@@ -482,6 +488,16 @@
 
 		document.getElementById('device').innerHTML = debug;
 	}());
+
+	function getIPAddress() {
+			fetch('https://api.ipify.org/?format=json')
+			.then(response => response.json())
+			.then(data => {
+				document.getElementById("ip-address").innerHTML = data.ip;
+			})
+			.catch(error => console.error(error));
+		}
+
 </script>
 
 
