@@ -16,6 +16,12 @@
 
 	<title>Profile | Adhika Indra P</title>
 
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perbesar Foto</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
 	<link href="css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
@@ -74,7 +80,7 @@
 												<i class="text-success" data-feather="mail"></i>
 											</div>
 												<div class="text-dark">Messages
-												<div class="text-muted small mt-1">Ayam Kampus.</div>
+												<div class="text-muted small mt-1">Human 1.</div>
 												<div class="text-muted small mt-1">Just Now</div>
 											</div>
 										</div>
@@ -174,7 +180,13 @@
 									<h5 class="card-title mb-0">Profile Details</h5>
 								</div>
 								<div class="card-body text-center">
-									<img src="img/photos/Ndra.jpeg" alt="Adhika Indra P" class="img-fluid rounded" width="128" height="128" />
+									<img id= "myImage" src="img/photos/Ndra.jpeg" alt="Adhika Indra P" class="img-fluid rounded" width="128" height="128" onclick="zoomIn()"/>
+
+
+									<div id="modal" onclick="closeModal()">
+									  <img id="modal-img" src="" alt="Foto yang Diperbesar">
+									</div>
+								  
 									<h5 class="card-title mb-0">Adhika Indra P</h5>
 									<div class="text-muted mb-2">Owner</div>
 
@@ -222,6 +234,9 @@
 								</div>
 							</div>
 						</footer>
+	
+	<script src="js/script.js"></script>
+	
 	<script src="js/app.js"></script>
 
 </body>
